@@ -1,0 +1,48 @@
+import { Translations, GeoLocation } from '../types';
+
+export const translations: Record<GeoLocation, Translations> = {
+  en: {
+    openGame: 'Open Game',
+    downloadCasino: 'Download Casino',
+    downloadDescription: 'Play Min anywhere, anytime',
+    download: 'Install App',
+    closeGame: 'Close',
+    selectGeo: 'Select Region',
+    ageRestriction: 'Only 18+',
+    licenseText: 'Casino is certified by the Anjouan Gaming Authority',
+    socialMedia: 'Us on social media:',
+  },
+  tr: {
+    openGame: 'Oyunu Aç',
+    downloadCasino: 'Casino İndir',
+    downloadDescription: 'Min\'i her yerde, her zaman oynayın',
+    download: 'Uygulamayı Yükle',
+    closeGame: 'Kapat',
+    selectGeo: 'Bölge Seç',
+    ageRestriction: 'Sadece 18+',
+    licenseText: 'Casino, Anjouan Oyun Otoritesi tarafından sertifikalandırılmıştır',
+    socialMedia: 'Sosyal medyada biz:',
+  },
+  it: {
+    openGame: 'Apri Gioco',
+    downloadCasino: 'Scarica Casino',
+    downloadDescription: 'Gioca a Min ovunque, in qualsiasi momento',
+    download: 'Installa App',
+    closeGame: 'Chiudi',
+    selectGeo: 'Seleziona Regione',
+    ageRestriction: 'Solo 18+',
+    licenseText: 'Il casinò è certificato dall\'Autorità di gioco di Anjouan',
+    socialMedia: 'Noi sui social media:',
+  },
+  ru: {
+    openGame: 'Открыть Игру',
+    downloadCasino: 'Скачать Казино',
+    downloadDescription: 'Играйте в Min где угодно и когда угодно',
+    download: 'Установить Приложение',
+    closeGame: 'Закрыть',
+    selectGeo: 'Выбрать Регион',
+    ageRestriction: 'Только 18+',
+    licenseText: 'Казино сертифицировано Игровым управлением Анжуана',
+    socialMedia: 'Мы в социальных сетях:',
+  },
+};

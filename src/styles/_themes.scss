@@ -1,0 +1,41 @@
+:root {
+  --color-primary: #0a1628;
+  --color-secondary: #1a2d4a;
+  --color-accent: #ffd700;
+  --color-button: #ff8c00;
+  --color-button-hover: #ffa033;
+  --color-download-button: #d63384;
+  --color-download-button-hover: #e85a9c;
+
+  --bg-image: url('../assets/images/background/background.png');
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --bg-image: url('../assets/images/background/background-1440.png');
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --bg-image: url('../assets/images/background/background-1200.png');
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --bg-image: url('../assets/images/background/background-768.png');
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --bg-image: url('../assets/images/background/background-480.png');
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --bg-image: url('../assets/images/background/background-375.png');
+  }
+}

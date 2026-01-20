@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140">
+  <defs>
+    <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#ffaa00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crown -->
+  <path d="M35 25 L45 10 L55 25 L60 5 L65 25 L75 10 L85 25 L85 35 L35 35 Z" fill="url(#crownGrad)"/>
+  <circle cx="45" cy="20" r="3" fill="#e63946"/>
+  <circle cx="60" cy="12" r="4" fill="#28a745"/>
+  <circle cx="75" cy="20" r="3" fill="#007bff"/>
+
+  <!-- Head -->
+  <circle cx="60" cy="65" r="35" fill="#8B4513"/>
+
+  <!-- Inner face -->
+  <circle cx="60" cy="68" r="28" fill="#A0522D"/>
+
+  <!-- Eyes -->
+  <ellipse cx="48" cy="58" rx="8" ry="10" fill="#fff"/>
+  <ellipse cx="72" cy="58" rx="8" ry="10" fill="#fff"/>
+  <circle cx="50" cy="60" r="5" fill="#2c1810"/>
+  <circle cx="74" cy="60" r="5" fill="#2c1810"/>
+  <circle cx="51" cy="58" r="2" fill="#fff"/>
+  <circle cx="75" cy="58" r="2" fill="#fff"/>
+
+  <!-- Nose -->
+  <ellipse cx="60" cy="75" rx="10" ry="8" fill="#2c1810"/>
+  <ellipse cx="60" cy="73" rx="4" ry="3" fill="#4a3728"/>
+
+  <!-- Mouth -->
+  <path d="M50 85 Q60 95 70 85" stroke="#2c1810" stroke-width="3" fill="none"/>
+
+  <!-- Ears -->
+  <ellipse cx="30" cy="50" rx="12" ry="15" fill="#8B4513"/>
+  <ellipse cx="30" cy="50" rx="8" ry="10" fill="#D2691E"/>
+  <ellipse cx="90" cy="50" rx="12" ry="15" fill="#8B4513"/>
+  <ellipse cx="90" cy="50" rx="8" ry="10" fill="#D2691E"/>
+
+  <!-- Royal cape/collar -->
+  <path d="M30 95 Q60 85 90 95 L95 130 Q60 115 25 130 Z" fill="#dc3545"/>
+  <path d="M32 97 Q60 88 88 97 L90 105 Q60 95 30 105 Z" fill="#fff"/>
+
+  <!-- Bow tie -->
+  <rect x="52" y="100" width="16" height="10" fill="#ffd700" rx="2"/>
+  <circle cx="60" cy="105" r="4" fill="#ffaa00"/>
+</svg>

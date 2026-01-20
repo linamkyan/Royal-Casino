@@ -1,0 +1,459 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
+              linear-gradient(270deg, #06225D 0%, #02011F 37.03%);
+  padding: 60px 32px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 32px;
+  }
+
+  &__mascot {
+    width: 288px;
+    height: 288px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
+  &__download-card {
+    width: 390px;
+    min-height: 294px;
+    flex-shrink: 0;
+    padding: 32px;
+    background: #02011F;
+    border: 1px dashed #FF9E6D;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__logo {
+    width: 175px;
+    height: auto;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-weight: 860;
+    font-size: 32px;
+    line-height: 1.25;
+    color: #FFFFFF;
+    margin: 0 0 6px;
+  }
+
+  &__description {
+    font-weight: 590;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #BABABA;
+    margin: 0 0 18px;
+  }
+
+  &__button {
+    width: max-content !important;
+    min-width: 250px !important;
+    height: 56px !important;
+    padding: 12px 32px !important;
+    background: linear-gradient(84.38deg, #FF8D6B 7.59%, #FFBA47 96.71%) !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    color: #FFFFFF !important;
+    text-transform: none !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4) !important;
+    transition: all 0.3s ease !important;
+
+    img {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    &:hover {
+      background: linear-gradient(84.38deg, #FFBA47 7.59%, #FF8D6B 96.71%) !important;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__badges {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+
+  &__badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    span {
+      max-width: 260px;
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(251, 251, 251, 0.7);
+      text-align: left;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  &__social-label {
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: 8.97px;
+  }
+
+  &__social-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+    }
+
+    &--instagram {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      border-color: rgba(240, 148, 51, 0.5);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(240, 148, 51, 0.4);
+        border-color: rgba(240, 148, 51, 0.8);
+      }
+    }
+
+    &--telegram {
+      background: #0088cc;
+      border-color: rgba(0, 136, 204, 0.5);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 136, 204, 0.4);
+        border-color: rgba(0, 136, 204, 0.8);
+      }
+    }
+
+    &--x {
+      background: #000000;
+      border-color: rgba(255, 255, 255, 0.3);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    &--email {
+      background: #666666;
+      border-color: rgba(255, 255, 255, 0.3);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 102, 102, 0.4);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    padding: 50px 24px;
+
+    &__content {
+      gap: 24px;
+    }
+
+    &__left {
+      gap: 24px;
+    }
+
+    &__mascot {
+      width: 240px;
+      height: 240px;
+    }
+
+    &__download-card {
+      width: 340px;
+      padding: 24px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    &__badges {
+      gap: 16px;
+      justify-content: space-around;
+    }
+
+    &__badge {
+      min-width: 240px;
+
+      img {
+        width: 36px;
+        height: 36px;
+      }
+
+      span {
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+  }
+
+  @include lg {
+    padding: 40px 24px;
+
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    &__left {
+      display: contents;
+    }
+
+    &__right {
+      display: contents;
+    }
+
+    &__mascot {
+      display: none;
+    }
+
+    &__download-card {
+      width: 100%;
+      max-width: 390px;
+      min-height: auto;
+      padding: 24px;
+      order: 1;
+    }
+
+    &__selector {
+      order: 2;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__social {
+      order: 3;
+      align-items: center;
+      width: 100%;
+    }
+
+    &__badges {
+      order: 4;
+      width: 598px;
+      max-width: 100%;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    &__badge {
+      width: 50%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      span {
+        text-align: center;
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    &__button {
+      width: max-content !important;
+      min-width: 220px !important;
+      height: 52px !important;
+      padding: 10px 28px !important;
+      font-size: 15px !important;
+    }
+
+    &__social-label {
+      font-size: 14px;
+    }
+  }
+
+  @include md {
+    &__content {
+      padding-bottom: 40px;
+    }
+
+    &__download-card {
+      max-width: 340px;
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+
+    &__description {
+      font-size: 13px;
+    }
+
+    &__button {
+      width: max-content !important;
+      min-width: 200px !important;
+      height: 48px !important;
+      padding: 10px 24px !important;
+    }
+
+    &__badge {
+      max-width: 180px;
+      text-align: center;
+
+      span {
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+  }
+
+  @include sm {
+    padding: 32px 16px;
+
+    &__content {
+      gap: 24px;
+      padding-bottom: 40px;
+    }
+
+    &__download-card {
+      padding: 20px;
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 22px;
+    }
+
+    &__description {
+      font-size: 13px;
+    }
+
+    &__button {
+      width: max-content !important;
+      min-width: 200px !important;
+      max-width: 100% !important;
+      height: 48px !important;
+      padding: 10px 24px !important;
+      font-size: 14px !important;
+    }
+
+    &__badges {
+      width: 100%;
+      height: 114px;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-between;
+    }
+
+    &__badge {
+      max-width: 100%;
+      flex-direction: column;
+      text-align: center;
+
+      span {
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+
+    &__social {
+      gap: 12px;
+    }
+
+    &__social-icons {
+      gap: 8.97px;
+    }
+
+    &__social-icon {
+      width: 52px;
+      height: 52px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
