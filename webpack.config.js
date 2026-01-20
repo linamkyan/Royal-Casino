@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
     entry: './src/index.tsx',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProduction ? '[name].[contenthash].js' : 'bundle.js',
+      filename: isProduction ? '[name].[contenthash].js' : '[name].js',
       chunkFilename: isProduction ? '[name].[contenthash].chunk.js' : '[name].chunk.js',
       assetModuleFilename: 'assets/[hash][ext][query]',
       clean: true,
@@ -156,7 +156,7 @@ module.exports = (env, argv) => {
       static: {
         directory: path.join(__dirname, 'public'),
       },
-      port: 3000,
+      port: 'auto',
       hot: true,
       historyApiFallback: true,
       compress: true,
