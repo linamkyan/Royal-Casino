@@ -4,6 +4,8 @@ import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import CloseIcon from '@mui/icons-material/Close';
+import styled from 'styled-components';
+import { useGeo } from '../../context/GeoContext';
 import './GameModal.scss';
 
 interface GameModalProps {
@@ -12,8 +14,32 @@ interface GameModalProps {
   gameUrl: string;
 }
 
+const StyledCloseButton = styled(IconButton)<{ $buttonColor: string; $buttonHoverColor: string }>`
+  && {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+    background: ${props => props.$buttonColor} !important;
+    color: #FFFFFF !important;
+    width: 40px !important;
+    height: 40px !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      background: ${props => props.$buttonHoverColor} !important;
+      transform: scale(1.05);
+    }
+
+    svg {
+      color: #FFFFFF !important;
+    }
+  }
+`;
+
 export const GameModal: React.FC<GameModalProps> = ({ open, onClose, gameUrl }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const { theme } = useGeo();
 
   const handleIframeLoad = () => {
     setIsLoading(false);
@@ -32,20 +58,21 @@ export const GameModal: React.FC<GameModalProps> = ({ open, onClose, gameUrl }) 
       aria-describedby="casino-game-iframe"
     >
       <Box className="game-modal__container">
-        <IconButton
+        <StyledCloseButton
           onClick={handleClose}
-          className="game-modal__close-button"
           aria-label="close"
+          $buttonColor={theme.buttonColor}
+          $buttonHoverColor={theme.buttonHoverColor}
         >
           <CloseIcon />
-        </IconButton>
-        
+        </StyledCloseButton>
+
         {isLoading && (
           <Box className="game-modal__loading">
-            <CircularProgress 
-              size={60} 
+            <CircularProgress
+              size={60}
               thickness={4}
-              sx={{ color: '#FF8D6B' }}
+              sx={{ color: theme.buttonColor }}
             />
           </Box>
         )}

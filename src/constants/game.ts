@@ -1,7 +1,3 @@
-/**
- * Game configuration constants
- */
-
 export const GAME_CONFIG = {
   URL: 'https://gateway.eva-digital-playground.com/v0/casino/games/launch',
   PARAMS: {
@@ -14,9 +10,6 @@ export const GAME_CONFIG = {
   },
 } as const;
 
-/**
- * Generate full game URL with parameters
- */
 export const getGameUrl = (language: string = 'en'): string => {
   const params = new URLSearchParams({
     ...GAME_CONFIG.PARAMS,

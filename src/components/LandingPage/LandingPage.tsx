@@ -94,7 +94,6 @@ export const LandingPage: React.FC = () => {
   const { geo, t, theme } = useGeo();
   const [gameOpen, setGameOpen] = useState(false);
 
-  // Set CSS variables dynamically based on theme
   useEffect(() => {
     document.documentElement.style.setProperty('--color-primary', theme.primaryColor);
     document.documentElement.style.setProperty('--color-secondary', theme.secondaryColor);
