@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, IconButton, Box, CircularProgress } from '@mui/material';
+import Modal from '@mui/material/Modal';
+import IconButton from '@mui/material/IconButton';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import CloseIcon from '@mui/icons-material/Close';
 import './GameModal.scss';
 

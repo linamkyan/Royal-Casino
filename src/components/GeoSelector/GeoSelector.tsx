@@ -1,16 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FormControl, Select, MenuItem, SelectChangeEvent } from '@mui/material';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import { useGeo } from '../../context/GeoContext';
 import { GeoLocation } from '../../types';
+import { GEO_OPTIONS } from '../../constants';
 import './GeoSelector.scss';
 import arrowIcon from '../../assets/images/chevron-down.svg';
-
-const geoOptions: { value: GeoLocation; label: string; flag: string }[] = [
-  { value: 'en', label: 'English', flag: 'https://flagcdn.com/w40/gb.png' },
-  { value: 'tr', label: 'Türkçe', flag: 'https://flagcdn.com/w40/tr.png' },
-  { value: 'it', label: 'Italiano', flag: 'https://flagcdn.com/w40/it.png' },
-  { value: 'ru', label: 'Русский', flag: 'https://flagcdn.com/w40/ru.png' },
-];
 
 const CustomArrow = () => (
   <img src={arrowIcon} alt="" className="geo-selector__arrow" />
@@ -75,7 +71,7 @@ export const GeoSelector: React.FC = () => {
             },
           }}
           renderValue={(value) => {
-            const option = geoOptions.find(opt => opt.value === value);
+            const option = GEO_OPTIONS.find(opt => opt.value === value);
             return (
               <div className="geo-selector__content">
                 <img src={option?.flag} alt={option?.label} className="geo-selector__flag" />
@@ -84,7 +80,7 @@ export const GeoSelector: React.FC = () => {
             );
           }}
         >
-          {geoOptions.map((option) => (
+          {GEO_OPTIONS.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               <img src={option.flag} alt={option.label} className="geo-selector__flag" />
               {option.label}

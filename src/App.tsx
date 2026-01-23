@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import CssBaseline from '@mui/material/CssBaseline';
 import { GeoProvider, useGeo } from './context/GeoContext';
 import { createGeoMuiTheme } from './theme/muiTheme';
@@ -10,10 +11,12 @@ const ThemedApp: React.FC = () => {
   const muiTheme = createGeoMuiTheme(theme);
 
   return (
-    <ThemeProvider theme={muiTheme}>
-      <CssBaseline />
-      <LandingPage />
-    </ThemeProvider>
+    <MuiThemeProvider theme={muiTheme}>
+      <StyledThemeProvider theme={theme}>
+        <CssBaseline />
+        <LandingPage />
+      </StyledThemeProvider>
+    </MuiThemeProvider>
   );
 };
 

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
@@ -78,6 +79,9 @@ module.exports = (env, argv) => {
               maxSize: 8 * 1024, // 8kb
             },
           },
+          generator: {
+            filename: 'images/[name].[hash:8][ext]',
+          },
         },
         {
           test: /\.svg$/i,
@@ -86,6 +90,9 @@ module.exports = (env, argv) => {
             dataUrlCondition: {
               maxSize: 8 * 1024, // 8kb
             },
+          },
+          generator: {
+            filename: 'images/[name].[hash:8][ext]',
           },
         },
         {
@@ -124,6 +131,43 @@ module.exports = (env, argv) => {
     ],
     optimization: {
       minimize: isProduction,
+      minimizer: isProduction ? [
+        '...',
+        new ImageMinimizerPlugin({
+          minimizer: {
+            implementation: ImageMinimizerPlugin.imageminMinify,
+            options: {
+              plugins: [
+                ['imagemin-mozjpeg', { quality: 80, progressive: true }],
+                ['imagemin-optipng', { optimizationLevel: 5 }],
+                ['imagemin-svgo', {
+                  plugins: [
+                    {
+                      name: 'preset-default',
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                          cleanupIds: false,
+                        },
+                      },
+                    },
+                  ],
+                }],
+                ['imagemin-gifsicle', { interlaced: true, optimizationLevel: 3 }],
+              ],
+            },
+          },
+          generator: [
+            {
+              preset: 'webp',
+              implementation: ImageMinimizerPlugin.imageminGenerate,
+              options: {
+                plugins: ['imagemin-webp'],
+              },
+            },
+          ],
+        }),
+      ] : [],
       splitChunks: {
         chunks: 'all',
         cacheGroups: {
