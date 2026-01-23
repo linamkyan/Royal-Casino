@@ -7,6 +7,12 @@ import { GameModal } from '../GameModal/GameModal';
 import { getGameUrl } from '../../constants';
 import mainLogo from '../../assets/images/main-logo.svg';
 import slotImage from '../../assets/images/slot.svg';
+import bgDefault from '../../assets/images/background/background.png';
+import bg375 from '../../assets/images/background/background-375.png';
+import bg480 from '../../assets/images/background/background-480.png';
+import bg768 from '../../assets/images/background/background-768.png';
+import bg1200 from '../../assets/images/background/background-1200.png';
+import bg1440 from '../../assets/images/background/background-1440.png';
 import './LandingPage.scss';
 
 const StyledLandingPage = styled.div`
@@ -18,17 +24,19 @@ const StyledLandingPage = styled.div`
   flex-direction: column;
 `;
 
-const StyledMainContent = styled.div<{ $bgGradient: string }>`
+const StyledMainContent = styled.div`
   flex: 1;
   width: 100%;
   position: relative;
   overflow: hidden;
-  background: ${props => props.$bgGradient};
+  background-image: url(${bgDefault});
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  height: 944px;
+  min-height: 944px;
 
   &::before {
     content: '';
@@ -37,12 +45,46 @@ const StyledMainContent = styled.div<{ $bgGradient: string }>`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      180deg,
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      ellipse at center center,
       rgba(10, 22, 40, 0.3) 0%,
+      rgba(10, 22, 40, 0.5) 50%,
       rgba(10, 22, 40, 0.7) 100%
     );
     pointer-events: none;
+  }
+
+  @media (max-width: 1440px) {
+    background-image: url(${bg1440});
+    height: 910px;
+    min-height: 910px;
+  }
+
+  @media (max-width: 1200px) {
+    background-image: url(${bg1200});
+    height: 854px;
+    min-height: 854px;
+    flex: none;
+  }
+
+  @media (max-width: 768px) {
+    background-image: url(${bg768});
+    height: 854px;
+    min-height: 854px;
+  }
+
+  @media (max-width: 480px) {
+    background-image: url(${bg480});
+    height: 854px;
+    min-height: 854px;
+  }
+
+  @media (max-width: 375px) {
+    background-image: url(${bg375});
+    height: 854px;
+    min-height: 854px;
   }
 `;
 
@@ -114,7 +156,7 @@ export const LandingPage: React.FC = () => {
 
   return (
     <StyledLandingPage data-geo={geo}>
-      <StyledMainContent $bgGradient={theme.backgroundGradient}>
+      <StyledMainContent>
         <div className="stars-overlay" />
 
         <div className="content-container">

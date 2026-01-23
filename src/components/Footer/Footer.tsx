@@ -24,17 +24,35 @@ const StyledFooter = styled.footer<{ $primaryColor: string; $secondaryColor: str
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
               linear-gradient(270deg, ${props => props.$primaryColor} 0%, ${props => props.$secondaryColor} 37.03%);
   padding: 60px 32px;
+  height: 416px;
+  min-height: 416px;
 
   @media (max-width: 1400px) {
     padding: 50px 24px;
+    height: 416px;
+    min-height: 416px;
   }
 
   @media (max-width: 1024px) {
     padding: 40px 24px;
+    height: 814px;
+    min-height: 814px;
   }
 
   @media (max-width: 768px) {
     padding: 32px 16px;
+    height: 814px;
+    min-height: 814px;
+  }
+
+  @media (max-width: 480px) {
+    height: 854px;
+    min-height: 854px;
+  }
+
+  @media (max-width: 375px) {
+    height: 854px;
+    min-height: 854px;
   }
 `;
 

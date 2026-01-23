@@ -37,6 +37,7 @@
     );
     pointer-events: none;
   }
+
 }
 
 .stars-overlay {
@@ -76,6 +77,9 @@
   padding: 40px 20px;
   flex: 1;
   min-height: 100%;
+  max-width: 358.5px;
+  margin: 0 auto;
+  width: 100%;
 
   @include md {
     padding: 24px 16px;
@@ -83,6 +87,7 @@
 
   @include sm {
     padding: 16px 12px;
+    max-width: 358.5px;
   }
 }
 
@@ -91,24 +96,9 @@
   margin-bottom: 20px;
 
   &__image {
-    width: 264px;
+    width: 263px;
     height: 120px;
     object-fit: contain;
-
-    @include md {
-      width: 220px;
-      height: 100px;
-    }
-
-    @include sm {
-      width: 180px;
-      height: 82px;
-    }
-
-    @include xs {
-      width: 150px;
-      height: 68px;
-    }
   }
 
   &__text {
